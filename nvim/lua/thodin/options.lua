@@ -1,0 +1,26 @@
+-- GENERAL OPTIONS
+
+-- absolute line number on the current line
+vim.opt.number = true
+-- relative line numbers on all other lines
+vim.opt.relativenumber = true
+
+-- highlight the current line
+vim.opt.cursorline = true
+-- enable mouse support
+vim.opt.mouse = 'a'
+
+-- always sho the sign column (e.g. for Git, diagnostics)
+vim.opt.signcolumn = 'yes'
+
+-- Optional: disable netrw (builtin file explorer), we've got nvim-tree now
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Optional: set termguicolors for better colors
+vim.opt.termguicolors = true
+
+-- Make splits open in a sensible direction
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
