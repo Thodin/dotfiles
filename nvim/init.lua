@@ -6,6 +6,7 @@ require('thodin.nvimtree')
 require('thodin.telescope')
 require('thodin.treesitter')
 require('thodin.vim-airline')
+require('thodin.api')
 require('thodin.lsp')
 require('thodin.cmp')
 

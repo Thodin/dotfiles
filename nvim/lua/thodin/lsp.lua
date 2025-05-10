@@ -1,5 +1,7 @@
 require('mason').setup()
-require('mason-lspconfig').setup()
+require('mason-lspconfig').setup({
+	ensure_installed = { "lua_ls", "rust_analyzer" }
+})
 
 local lspconfig = require('lspconfig')
 
@@ -21,3 +23,15 @@ lspconfig.lua_ls.setup {
 		}
 	}
 }
+
+-- Rust
+lspconfig.rust_analyzer.setup({
+	settings = {
+		["rust-analyzer"] = {
+			cargo = { allFeatures = true },
+			checkOnSave = {
+				command = "clippy"
+			}
+		}
+	}
+})
