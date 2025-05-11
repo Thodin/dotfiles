@@ -63,4 +63,7 @@ require('packer').startup(function(use)
 		}
 	}
 
+	-- icons for lsp completion items
+	use 'onsails/lspkind.nvim'
+
 end)

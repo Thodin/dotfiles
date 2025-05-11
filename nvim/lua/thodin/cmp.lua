@@ -1,4 +1,5 @@
 -- Setup cmp
+local lspkind = require("lspkind")
 local cmp = require'cmp'
 
 cmp.setup({
@@ -19,7 +20,14 @@ cmp.setup({
   }, {
     { name = 'buffer' },
     { name = 'path' }
-  })
+  }),
+  formatting = {
+	  format = lspkind.cmp_format({
+		  mode = "symbol_text", -- show symbol and text
+		  maxwidth = 50,        -- limit popup width
+		  ellipsis_char = "…",  -- truncation char
+	  })
+  }
 })
 
 
@@ -40,3 +48,4 @@ require('lspconfig').lua_ls.setup {
     }
   }
 }
+
