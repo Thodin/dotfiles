@@ -8,6 +8,7 @@ require('telescope').setup{
 		file_ignore_patterns = { 'node_modules', '.git' },
 		prompt_prefix = '> ',
 		color_devicons = true,
+		initial_mode = "insert"
 	},
 	pickers = {
 		find_files = {
@@ -16,4 +17,6 @@ require('telescope').setup{
 		}
 	}
 }
+
 require('telescope').load_extension('fzf')
+
