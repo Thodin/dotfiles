@@ -4,6 +4,8 @@ vim.g.mapleader = ' '
 
 -- Edit this config file
 vim.keymap.set('n', '<leader>;;', ':e $MYVIMRC<CR>', {})
+vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR><Esc>', { silent = true })
+
 
 
 -- PACKAGE SPECIFIC KEYBINDINGS
