@@ -24,3 +24,13 @@ vim.opt.termguicolors = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+-- Number of visual spaces per TAB
+vim.opt.tabstop = 4
+-- Number of spaces for each indentation
+vim.opt.shiftwidth = 4
+-- Uses spaces instead of tabs
+vim.opt.expandtab = true
+-- Smart auto-indenting on new lines
+vim.opt.smartindent = true
+-- Copy indent from current line when starting a new line
+vim.opt.autoindent = true
