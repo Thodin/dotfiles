@@ -16,36 +16,16 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'luasnip' }
-  }, {
+    { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path' }
   }),
   formatting = {
 	  format = lspkind.cmp_format({
-		  mode = "symbol_text", -- show symbol and text
-		  maxwidth = 50,        -- limit popup width
-		  ellipsis_char = "…",  -- truncation char
-	  })
+  	  mode = "symbol_text", -- show symbol and symbol_text
+      maxwidth = 50,        -- limit popup width
+	  ellipsis_char = "…",  -- truncation char
+      })
   }
 })
-
-
--- Attach cmp to lsp
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-require('lspconfig').lua_ls.setup {
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      runtime = { version = 'LuaJIT' },
-      diagnostics = { globals = { 'vim' } },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false,
-      },
-      telemetry = { enable = false },
-    }
-  }
-}
 
