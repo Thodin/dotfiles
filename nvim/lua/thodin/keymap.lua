@@ -19,11 +19,11 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>r', function ()
-	builtin.lsp_references({
-		prompt_title = 'Find references',
-		default_text = ''
-	})
+vim.keymap.set('n', '<leader>r', function()
+    builtin.lsp_references({
+        prompt_title = 'Find references',
+        default_text = ''
+    })
 end, { desc = 'Find references' })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 vim.keymap.set("v", "<leader>ca", vim.lsp.buf.code_action, opts)
@@ -37,9 +37,21 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>td', builtin.diagnostics)
 
 -- go to definition/implementation
-vim.keymap.set('n', '<leader>d', function() 
-	builtin.lsp_definitions() 
+vim.keymap.set('n', '<leader>d', function()
+    builtin.lsp_definitions()
 end, { desc = "Go to definition" })
 vim.keymap.set('n', '<leader>i', function()
-	builtin.lsp_implementations()
+    builtin.lsp_implementations()
 end, { desc = "Go to implementation" })
+
+-- trouble
+local trouble = require("trouble")
+vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
+vim.keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+    { desc = "Buffer Diagnostics (Trouble)" })
+vim.keymap.set("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>",
+    { desc = "Symbols (Trouble)" })
+vim.keymap.set("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+    { desc = "LSP Definitions / references / ... (Trouble)" })
+vim.keymap.set("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
+vim.keymap.set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })

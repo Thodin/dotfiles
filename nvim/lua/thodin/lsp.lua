@@ -13,7 +13,7 @@ require('mason-lspconfig').setup({
 local lspconfig = require("lspconfig")
 
 local on_attach = function(client, bufnr)
-    print("LSP attached:", client.name)
+    -- print("LSP attached:", client.name)
     -- your keymaps here
 end
 

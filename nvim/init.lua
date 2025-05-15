@@ -9,4 +9,4 @@ require('thodin.vim-airline')
 require('thodin.api')
 require('thodin.lsp')
 require('thodin.cmp')
-
+require('thodin.trouble')
