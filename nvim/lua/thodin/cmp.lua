@@ -18,7 +18,7 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        { name = 'buffer' },
+        -- { name = 'buffer' }, "Text" completions from words used in this buffer
         { name = 'path' }
     }),
     formatting = {
