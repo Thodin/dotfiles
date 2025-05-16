@@ -15,6 +15,20 @@ local lspconfig = require("lspconfig")
 local on_attach = function(client, bufnr)
     -- print("LSP attached:", client.name)
     -- your keymaps here
+
+    -- highlight occurrences of the currently selected variable
+    -- TODO: adjust hold time (is too long) and highlighting (is too faint, only a bit of yellow)
+    if client.server_capabilities.documentHighlightProvider then
+        vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+            buffer = bufnr,
+            callback = vim.lsp.buf.document_highlight,
+        })
+
+        vim.api.nvim_create_autocmd("CursorMoved", {
+            buffer = bufnr,
+            callback = vim.lsp.buf.clear_references,
+        })
+    end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
