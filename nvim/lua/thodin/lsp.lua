@@ -10,6 +10,19 @@ require('mason-lspconfig').setup({
     }
 })
 
+-- Virtual text for errors
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●',  -- Can be '●', '■', '▎', '➤', or just "" for no prefix
+    spacing = 2,
+  },
+  signs = true,          -- Show signs in the gutter
+  underline = true,      -- Underline the error line
+  update_in_insert = false,  -- Avoid updating while typing
+  severity_sort = true,  -- Show most severe issues first
+})
+
+
 local lspconfig = require("lspconfig")
 
 local on_attach = function(client, bufnr)
