@@ -74,4 +74,17 @@ require('packer').startup(function(use)
             require("trouble").setup({})
         end
     }
+
+    -- show signature help for functions.
+    use {
+    "ray-x/lsp_signature.nvim",
+    config = function()
+        require("lsp_signature").setup({
+            hint_enable = true,
+            handler_opts = {
+                border = "rounded"
+            }
+        })
+    end
+}
 end)
