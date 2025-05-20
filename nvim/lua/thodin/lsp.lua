@@ -12,14 +12,14 @@ require('mason-lspconfig').setup({
 
 -- Virtual text for errors
 vim.diagnostic.config({
-  virtual_text = {
-    prefix = '●',  -- Can be '●', '■', '▎', '➤', or just "" for no prefix
-    spacing = 2,
-  },
-  signs = true,          -- Show signs in the gutter
-  underline = true,      -- Underline the error line
-  update_in_insert = false,  -- Avoid updating while typing
-  severity_sort = true,  -- Show most severe issues first
+    virtual_text = {
+        prefix = '●', -- Can be '●', '■', '▎', '➤', or just "" for no prefix
+        spacing = 2,
+    },
+    signs = true,             -- Show signs in the gutter
+    underline = true,         -- Underline the error line
+    update_in_insert = false, -- Avoid updating while typing
+    severity_sort = true,     -- Show most severe issues first
 })
 
 
@@ -83,12 +83,12 @@ lspconfig.rust_analyzer.setup({
 })
 
 -- C#
-lspconfig.omnisharp.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { "OmniSharp" },
-    enable_roslyn_analyzers = true,
-    organize_imports_on_format = true,
+lspconfig.csharp_ls.setup({
+    cmd = { "csharp-ls" },
+    root_dir = require("lspconfig.util").root_pattern("*.sln", "*.csproj", ".git"),
+    init_options = {
+        AutomaticWorkspaceInit = true
+    }
 })
 
 -- TS
