@@ -13,7 +13,8 @@ require("conform").setup({
 	formatters = {
 		csharpier = {
 			command = "csharpier",
-			args = { "format", "--write-stdout", "--no-cache", "$FILENAME" },
+			args = { "format", "--write-stdout", "--no-cache" },
+			stdin = true,
 		},
 	},
 })
