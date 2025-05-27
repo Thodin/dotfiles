@@ -120,6 +120,11 @@ eval "$(starship init zsh)"
 [[ -f "$HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$HOME/.dart-cli-completion/zsh-config.zsh" || true
 ## [/Completion]
 
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$HOME/.dotnet:$PATH
+export PATH="$PATH:/home/max/.dotnet/tools"
+export DOTNET_CLI_TELEMETRY_OPTOUT=true
+
 # Run Hyprland on startup
 if [[ -z $DISPLAY && $(tty) = /dev/tty1 ]]; then
 	exec Hyprland
