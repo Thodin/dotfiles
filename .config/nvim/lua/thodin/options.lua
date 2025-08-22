@@ -34,3 +34,6 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 -- Copy indent from current line when starting a new line
 vim.opt.autoindent = true
+
+-- Don't wrap long lines
+vim.opt.wrap = false
