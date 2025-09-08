@@ -37,3 +37,12 @@ vim.opt.autoindent = true
 
 -- Don't wrap long lines
 vim.opt.wrap = false
+
+-- 2-space tabs for js/ts
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
+    callback = function()
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+    end,
+})
