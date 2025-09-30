@@ -1,29 +1,51 @@
+/* Gruvbox Hard for Wofi */
+
+/* Window */
 window {
-  background-color: #282a36;
-  border: 2px solid #bd93f9;
-  border-radius: 8px;
-  padding: 6px;
+  margin: 5px;
+  border: 2px solid #d3869b; /* purple accent */
 }
 
-listview {
-  background-color: #282a36;
-  border-radius: 8px;
-  spacing: 4px;
+#outer-box {
+  background-color: #1d2021; /* dark0_hard */
+  border: 2px solid #79740e;
+  border-radius: 10px;
 }
 
-entry {
+/* Single entry (each app) */
+#entry {
   font: 12pt "JetBrainsMono Nerd Font";
-  color: #f8f8f2;
-  padding: 4px;
-  border-radius: 4px;
+  color: #d3d6a5; /* foreground */
+  background-color: #3c3836; /* dark0_hard */
+  padding: 5px 8px;
+  margin-top: 2px;
+  border-radius: 6px;
 }
 
-entry:selected {
-  background-color: #44475a;
-  color: #f8f8f2;
+/* Selected entry */
+#entry:selected {
+  font: 12pt "JetBrainsMono Nerd Font";
+  background-color: #3c3836; /* dark1 */
+  color: #fe8019; /* yellow accent */
 }
 
-scrollbar {
-  background-color: #6272a4;
+/* Optional: hover effect */
+#entry:hover {
+  background-color: #504945; /* dark2 */
+  color: #b8bb26; /* green accent */
+}
+
+/* Scrollbar */
+#scroll {
+  background-color: #1d2021; /* dark3 */
   border-radius: 4px;
+  width: 6px;
+}
+
+/* Input text (search) */
+#input {
+  font: 12pt "JetBrainsMono Nerd Font";
+  background-color: #1d2021; /* dark0_hard */
+  border: 2px solid #79740e;
+  color: #ebdbb2;
 }
